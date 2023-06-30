@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Frontend Mentor | [Challenge Name Here]</title>
+</head>
+<body>
+  <main>
+    <div class="cel">
+      <div class="cel__header">
+        <button class="cel__header--back" type="button">&lsaquo;</button>
+        <img class="cel__header--img" src="./images/avatar.jpg" alt="foto de perfil">
+        <div class="cel__header__user">
+          <p class="cel__header__user--name">samuel green</p>
+          <p class="cel__header__user--state">Available to walk</p>
+        </div>
+        <button class="cel__header--config" type="button">
+          <span class="cel__header--icon"></span>
+          <span class="cel__header--icon"></span>
+          <span class="cel__header--icon"></span>
+        </button>
+      </div>
+
+      <div class="cel__main">
+        <ul class="mensagens">
+          <li class="cel__main--msgRecebida mensagen">that sounds great. i'd be happy to discuss more</li>
+          <li class="cel__main--msgRecebida mensagen">Could you send over some pictures of your dog, please?</li>
+          <li class="cel__main--msgEnviada-fotos mensagen"><img class="foto" src="./images/dog-image-1.jpg" alt="dog"><img class="foto" src="./images/dog-image-2.jpg" alt="dog"><img class="foto" src="./images/dog-image-3.jpg" alt="dog"></li>
+          <li class="cel__main--msgEnviada mensagen">Here are a few pictures. She’s a happy girl!</li>
+          <li class="cel__main--msgEnviada mensagen">Can you make it?</li>
+          <li class="cel__main--msgRecebida mensagen">She looks so happy! The time we discussed works. How long shall I take her out for?</li>
+          <li class="">
+            <label class="cel__main--msgPreco mensagen">
+              <input class="precoCaminhada" type="radio" name="precoCaminhada" id="barato">
+              30 minute walk
+              <span class="preco">$29</span>
+            </label>
+          </li>
+          <li>
+            <label class="cel__main--msgPreco mensagen">
+              <input class="precoCaminhada" type="radio" name="precoCaminhada" id="caro" />
+              1 hour walk
+              <span class="preco">$49</span>
+            </label>
+          </li>
+        </ul>
+        <label class="cel__main__text">
+          <input class="cel__main__text--input" type="text" placeholder="Type a message…">
+          <button class="cel__main__text--button" type="button">&rsaquo;</button>
+      </label>
+      </div>
+    </div>
+    <div class="text">
+      <h1>Simple booking</h1>
+      <p>Stay in touch with our dog walkers through the chat interface. This makes it easy to discuss arrangements and make bookings. Once the walk has been completed you can rate your walker and book again all through the chat.</p>
+    </div>
+  </main>
+</body>
+</html>

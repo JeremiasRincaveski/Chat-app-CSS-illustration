@@ -1,0 +1,453 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+:root {
+  --borda-fundo-direita: 500px;
+  --borda-fundo-esquerda: 0px;
+  --cor-borda-celular: var(--white);
+  --cor-icone-config: var(--white);
+  --cor-mensagem-enviada: var(--very-dark-desaturated-violet);
+  --cor-seta-voltar: var(--white);
+  --cor-texto-mensagem-enviada: var(--light-violet);
+  --cor-texto-preco-destaque: var(--white);
+  --cor-texto-preco: rgba(255, 255, 255, .6);
+  --cor-texto-state: var(--grayish-blue);
+  --cor-texto-usuario: var(--white);
+  --dark-grayish-violet: hsl(270, 7%, 64%);
+  --desaturated-dark-violet: hsl(271, 15%, 43%);
+  --font-family: 'Rubik', sans-serif;
+  --font-size: 16px;
+  --font-weight: 400;
+  --fundo-desenho: var(--light-violet);
+  --fundo-mensagem-enviada: var(--white);
+  --fundo-mensagem-enviada: var(--white);
+  --fundo-mensagem-recebida: var(--light-violet-opacity);
+  --fundo: var(--light-grayish-violet);
+  --gradiante-header: linear-gradient(to right, var(--light-violet), var(--light-magenta));
+  --gradiente-preco: linear-gradient(to left, var(--light-violet), var(--light-magenta));
+  --grayish-blue-opacity: hsla(206, 6%, 79%, .5);
+  --grayish-blue: hsl(206, 6%, 79%);
+  --light-grayish-violet: hsl(270, 20%, 96%);
+  --light-magenta: hsl(293, 100%, 63%);
+  --light-violet-opacity: hsla(264, 100%, 61%, .05);  
+  --light-violet: hsl(264, 100%, 61%);
+  --moderate-violet: hsl(276, 55%, 52%);
+  --pale-violet: hsl(276, 100%, 81%);
+  --very-dark-desaturated-violet: hsl(271, 36%, 24%);
+  --very-dark-desaturated-violet: hsl(271, 36%, 24%);
+  --very-light-magenta: hsl(289, 100%, 72%);
+  --white: hsl(0, 0%, 100%);
+  --tamanho-texto-mensagem: 30ch;
+  --direcao-texto-text: center;
+  --cel-margin-top: 7rem;
+  --padding-body: 4rem;
+  --body-before-display: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  background-color: var(--fundo);
+  display: flex;
+  height: max-content;
+  justify-content: center;
+  max-width: 1470px;
+  padding: var(--padding-body) 2rem;
+  position: relative;
+  width: 100%;
+}
+
+body::after {
+  background-color: var(--fundo-desenho);
+  border-bottom-left-radius: var(--borda-fundo-esquerda);
+  border-bottom-right-radius: var(--borda-fundo-direita);
+  content: '';
+  max-width: 30rem;
+  height: 33rem;
+  left: -0rem;
+  position: absolute;
+  top: -0rem;
+  width: 50vw;
+  z-index: -1;
+  transition: all 1s ease-in-out;
+}
+
+body::before {
+  background-color: var(--light-violet-opacity);
+  border-top-left-radius: 500px;
+  border-top-right-radius: var(--borda-fundo-direita);
+  content: '';
+  display: var(--body-before-display);
+  max-width: 30rem;
+  height: 33rem;
+  right: 0;
+  position: absolute;
+  bottom: 0;
+  width: 50vw;
+  opacity: .7;
+  z-index: -1;
+  transition: all 1s ease-in-out;
+}
+
+main {
+  align-items: center;
+  align-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100vh;
+  justify-content: center;
+  max-height: 726px;
+  gap: 5rem;
+  width: 100%;
+}
+
+.cel {
+  align-items: flex-start;
+  background-color: var(--fundo);
+  border-radius: 30px;
+  border: 10px solid var(--cor-borda-celular);
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, .1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* margin-top: var(--cel-margin-top); */
+  position: relative;
+  width: 260px;
+}
+
+.cel::before {
+  background-color: var(--white);
+  border-radius: 0 0 25px 25px;
+  content: '';
+  height: 1.4rem;
+  left: 50%;
+  position: absolute;
+  top: 0px;
+  transform: translateX(-50%);
+  width: 65%;
+  z-index: 1;
+}
+
+.cel__header{
+  align-items: center;
+  background: var(--gradiante-header);
+  border-radius: 20px 20px 10px 10px;
+  display: flex;
+  font-size: 1rem;
+  gap: 1rem;
+  height: max-content;
+  padding: 2.3rem 1rem .5rem 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.cel__header--back{
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  color: var(--cor-seta-voltar);
+  display: flex;
+  font-size: 1.7rem;
+  height: 1.5rem;
+  justify-content: center;
+  width: 0;
+}
+
+.cel__header--back:hover {
+  cursor: pointer;
+}
+
+.cel__header--img {
+  border-radius: 50%;
+  height: 2rem;
+  outline: 1px solid var(--white);
+  width: 2rem;
+}
+
+.cel__header__user {
+  align-items: flex-start;
+  color: var(--cor-texto-usuario);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.cel__header__user--name {
+  font-size: .8rem;
+  text-transform: capitalize;
+}
+
+.cel__header__user--state {
+  color: var(--cor-texto-state);
+  font-size: .6rem;
+  opacity: .8;
+}
+
+.cel__header--config {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  height: max-content;
+  margin-left: auto;
+  width: 1rem;
+}
+
+.cel__header--config:hover {
+  cursor: pointer;
+}
+
+.cel__header--icon {
+  background-color: var(--cor-icone-config);
+  border-radius: 50%;
+  border: none;
+  height: 4px;
+  width: 4px;
+}
+
+.cel__main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: .5rem;
+  width: 100%;
+}
+
+.mensagens {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  height: 100%;
+  overflow-x: hidden;
+  margin-top: .6rem;
+  width: 100%;
+}
+
+.mensagen {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 10px;
+  max-width: 70%;
+  width: max-content;
+}
+
+.mensagens li:nth-of-type(1) {
+  animation: mensagem-recebida 1s ease-in-out;
+}
+
+.mensagens li:nth-of-type(2) {
+  animation: mensagem-recebida 3s cubic-bezier(1,-0.08,.92,.74);
+}
+
+.mensagens li:nth-of-type(3) {
+  animation: mensagem-enviada 5s cubic-bezier(1,-1.06,.76,.84);
+}
+
+.mensagens li:nth-of-type(4) {
+  animation: mensagem-enviada 7s cubic-bezier(1,-1.06,.76,.84);
+}
+
+.mensagens li:nth-of-type(5) {
+  animation: mensagem-enviada 10s cubic-bezier(1,-1.06,.82,.37);
+}
+
+.mensagens li:nth-of-type(6) {
+  animation: mensagem-recebida 13s cubic-bezier(1,-1.06,.82,.37);
+}
+
+.mensagens li:nth-of-type(7) {
+  animation: mensagem-recebida 16s cubic-bezier(1,-1.06,.82,.37);
+}
+
+.mensagens li:nth-of-type(8) {
+  animation: mensagem-recebida 19s cubic-bezier(1,-1.06,.82,.37);
+}
+
+.mensagen::first-letter {
+  text-transform: capitalize;
+}
+
+.cel__main--msgRecebida {
+  color: var(--cor-texto-mensagem-enviada);
+  border-radius: 10px 10px 10px 0;
+  padding: .5rem;
+  background-color: var(--fundo-mensagem-recebida);
+}
+
+
+.cel__main--msgEnviada-fotos {
+  align-self: flex-end;
+  gap: .5rem;
+  justify-content: flex-end;
+}
+
+.foto {
+  border-radius: 10px;
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.cel__main--msgEnviada {
+  align-self: flex-end;
+  background-color: var(--fundo-mensagem-enviada);
+  border-radius: 10px 10px 0 10px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, .1);
+  color: var(--cor-mensagem-enviada);
+  padding: .5rem;
+}
+
+.cel__main--msgEnviada::first-letter {
+  text-transform: capitalize;
+}
+
+.cel__main--msgPreco {
+  align-items: center;
+  background: var(--gradiente-preco);
+  border-radius: 10px 10px 10px 0;
+  color: var(--cor-texto-preco);
+  display: flex;
+  display: flex;
+  justify-content: center;
+  max-width: 11rem;
+  padding: .5rem;
+  width: 11rem;
+}
+
+.precoCaminhada {
+  appearance: none;
+  border-radius: 50%;
+  border: 1px solid var(--cor-texto-preco);
+  height: 1rem;
+  margin-right: .5rem;
+  width: 1rem;
+}
+
+.precoCaminhada:checked {
+  background-color: var(--cor-texto-preco);
+}
+
+.preco {
+  color: var(--white);
+  font-size: .8rem;
+  font-weight: 700;
+  margin-left: auto;
+  margin-right: .5rem;
+}
+
+.cel__main__text {
+  align-items: center;
+  background-color: var(--cor-texto-preco-destaque);
+  border-radius: 20px;
+  display: flex;
+  height: 2.3rem;
+  padding: .3rem .3rem .3rem 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.cel__main__text--input::placeholder {
+  color: var(--grayish-blue);
+  font-size: .8rem;
+}
+
+.cel__main__text--input {
+  background-color: transparent;
+  border: none;
+  color: var(--very-dark-desaturated-violet);
+  font-size: .8rem;
+  height: 1.5rem;
+  outline: none;
+  width: 100%;
+}
+
+.cel__main__text--button {
+  align-items: center;
+  background-color: var(--very-dark-desaturated-violet);
+  border-radius: 50%;
+  border: none;
+  color: var(--white);
+  display: flex;
+  font-size: 1.7rem;
+  height: calc(100% - .6rem);
+  justify-content: center;
+  padding-bottom: .2rem;
+  padding-left: .15rem;
+  position: absolute;
+  right: .3rem;
+  text-align: center;
+  width: 1.5rem;
+}
+
+.text {
+  text-align: var(--direcao-texto-text);
+}
+
+.text > h1 {
+  color: var(--very-dark-desaturated-violet);
+  font-weight: 700;
+  margin: 0;
+}
+
+.text > p {
+  color: var(--grayish-blue);
+  font-size: 1rem;
+  margin-top: 1rem;
+  width: var(--tamanho-texto-mensagem);
+}
+
+@keyframes mensagem-recebida {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes mensagem-enviada {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  :root {
+    --borda-fundo-esquerda: 500px;
+    --direcao-texto-text: left;
+    --tamanho-texto-mensagem: 28rem;
+    --body-before-display: block;
+  }
+}
+
+@media screen and (min-width: 709px) {
+  :root {
+    --padding-body: 0;
+  }
+}
