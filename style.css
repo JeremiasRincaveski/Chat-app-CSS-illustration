@@ -72,7 +72,7 @@ body {
   width: 100%;
 }
 
-body::after {
+body::before {
   background-color: var(--fundo-desenho);
   border-bottom-left-radius: var(--borda-fundo-esquerda);
   border-bottom-right-radius: var(--borda-fundo-direita);
@@ -87,7 +87,7 @@ body::after {
   transition: all 1s ease-in-out;
 }
 
-body::before {
+body::after {
   background-color: var(--light-violet-opacity);
   border-top-left-radius: 500px;
   border-top-right-radius: var(--borda-fundo-direita);
