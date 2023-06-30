@@ -57,6 +57,7 @@ html {
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   height: 100vh;
+  overflow: hidden;
   width: 100vw;
 }
 
@@ -96,7 +97,7 @@ body::before {
   height: 33rem;
   right: 0;
   position: absolute;
-  bottom: 0;
+  bottom: -15rem;
   width: 50vw;
   opacity: .7;
   z-index: -1;
