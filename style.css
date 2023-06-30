@@ -126,7 +126,6 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* margin-top: var(--cel-margin-top); */
   position: relative;
   width: 260px;
 }
@@ -227,7 +226,7 @@ main {
 .cel__main {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: .5rem;
   padding: .5rem;
   width: 100%;
 }
@@ -396,7 +395,7 @@ main {
   position: absolute;
   right: .3rem;
   text-align: center;
-  width: 1.5rem;
+  width: 1.7rem;
 }
 
 .text {
